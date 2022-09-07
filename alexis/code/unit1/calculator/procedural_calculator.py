@@ -22,8 +22,12 @@ def get_valid_choice():
         if "q" in inp:                      # exit on "q" input
             print("Exiting...")
             sys.exit()
+        elif inp in " \n":                  # return error if blank
+            print("Cannot be blank")
         elif inp in "+=*/":                 # check if valid
             operator = inp                  # if valid, assign operator
+        else:                               # if not valid
+            print("Invalid input")
 
     return operator
 
