@@ -2,6 +2,7 @@
 import pygame
 import random
 import time
+import sys
 
 locationx = [121, 180, 242, 302]
 locationy = [557, 558, 560, 560]
