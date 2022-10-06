@@ -1,0 +1,51 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    color: grey;
+}
+
+h2 {
+    color: darkgrey; /*The dark grey is really just light grey :p*/
+}
+
+h3 {
+    color: lightgrey; /*And light grey is even lighter*/
+}
+
+p {
+    color: whitesmoke;
+}
+
+textarea {
+    resize: none;
+}
+
+#circle {
+    width: 100px;
+    height: 100px;
+    background: red;
+    border-radius: 50%
+}
+
+.styled_button {
+    width: 100px;
+    height: 100px;
+    background: palevioletred;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    border-style: groove;
+    padding: 10px;
+}
+
+.styled_button:hover {
+    background: red;
+    color: white;
+}
+
+.styled_button:active {
+    background: darkred;
+    color: white;   
+}
