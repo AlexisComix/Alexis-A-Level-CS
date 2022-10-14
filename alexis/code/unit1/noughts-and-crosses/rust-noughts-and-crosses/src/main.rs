@@ -15,6 +15,7 @@ fn main() {
     // Main loop
     loop {
         let mut is_game_won: bool = false;
+        
         // Get the index for the input
         let mut input_index: i32 = get_input_index();
         if input_index == -1 {return;}
