@@ -1,0 +1,109 @@
+body {
+    background-color: black;
+}
+
+#trans {
+	background: linear-gradient(
+		to bottom,
+		#5ccefa,
+		#5ccefa 20%,
+		#f6a8b7 20%,
+		#f6a8b7 40%,
+		#fff 40%,
+		#fff 60%,
+		#f6a8b7 60%,
+		#f6a8b7 80%,
+		#5ccefa 80%,
+		#5ccefa
+		);
+}
+
+.pfp{
+    margin-top: 10px;
+    clip-path: circle();
+    width: 100;
+    height: 100;
+    border-spacing: 5px;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.pfp:hover {
+    transform: scale(1.05);
+}
+
+p {
+    color: lightgrey;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: underline;
+    text-decoration-color: rgb(200, 100, 200);
+}
+
+h2 {
+    color: rgb(200, 100, 200);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+div.whoami {
+    text-align: center;
+}
+
+.github-logo {
+    height: 100px;
+    clip-path: circle();
+    overflow: hidden;   
+    display: inline-block;
+    border: 3px solid rgb(200, 100, 200);
+    border-spacing: 5px;
+    border-radius: 50%;
+    margin-left: 10px;
+    padding-bottom: 1px;
+    text-align: justify;
+}
+
+.github-logo:hover {
+    transform: scale(1.05);
+}
+
+div.about-me {
+    text-align: center; 
+    word-wrap: break-word;
+}
+
+.not-a-rick-roll {
+    width: 150px;
+}
+
+.not-a-rick-roll:hover {
+    transform: scale(1.05);
+}
+
+.blog-button {
+    height: 93px;
+    width: 93px;
+    clip-path: circle();
+    overflow: hidden;   
+    display: inline-block;
+    border: 3px solid rgb(200, 100, 200);
+    border-spacing: 5px;
+    border-radius: 50%;
+    margin-left: 10px;
+    padding: 5px;
+    text-align: justify;
+}
+
+.blog-button:hover {
+    transform: scale(1.05);
+}
+
+div.blog {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    word-wrap: break-word;
+}
