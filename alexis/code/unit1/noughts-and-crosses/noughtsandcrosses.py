@@ -29,7 +29,7 @@ class NoughtsAndCrossesGame:
                 sys.exit()
 
         self.choice = int(self.choice)
-
+        
     def display_board(self):
         for row in self.board:
             print(f"[{row[0]}] [{row[1]}] [{row[2]}]")
@@ -93,6 +93,7 @@ class NoughtsAndCrossesGame:
         return True if "-" not in all_pieces else False
 
     def main(self):
+        is_draw = False
         while self.winner is None:
             is_free = False
             while not is_free:
