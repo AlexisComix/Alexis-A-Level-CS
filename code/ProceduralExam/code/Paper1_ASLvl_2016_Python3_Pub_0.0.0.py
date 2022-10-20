@@ -43,6 +43,9 @@ def LoadGame(Filename, Board):
   BoardFile.close()
     
 def PlaceRandomShips(Board, Ships):
+  Row = 0
+  Column = 0
+  Orientation = ""
   for Ship in Ships:
     Valid = False
     while not Valid:
