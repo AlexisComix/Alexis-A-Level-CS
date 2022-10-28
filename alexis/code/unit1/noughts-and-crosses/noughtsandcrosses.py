@@ -23,12 +23,23 @@ class NoughtsAndCrossesGame:
         print(text)
 
     def get_input(self):
-        while str(self.choice) not in "123456789":
-            self.choice = input()
-            if self.choice == "q":
-                sys.exit()
+        """
+        Get input from the user.
+        It waits for a valid input or quits on q.
+        """
+        indexes = "123456789"
 
-        self.choice = int(self.choice)
+        while str(self.choice) not in indexes:  # Iterate through indexes
+            usr_choice = input()                # Get input
+            
+            if usr_choice == "q":               # Quit on 'q'
+                sys.exit()
+            
+            # Convert first of usr_choice to an int if it is numeric
+            if usr_choice.isnumeric():         
+                self.choice = int(usr_choice[0])
+            else:
+                print("Input must be numeric.")
         
     def display_board(self):
         for row in self.board:
