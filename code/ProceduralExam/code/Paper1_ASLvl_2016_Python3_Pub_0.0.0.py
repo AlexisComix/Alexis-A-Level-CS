@@ -15,11 +15,17 @@ Yikes.
 def GetRowColumn(): # Get two integers as an input from the user
   print()           # Print a blank new line for some reason
   Column = int(input("Please enter column: "))  # Unchecked cast to int
-  Row = int(input("Please enter row: "))        # Unchecked cast to int
+
+  # Added/Modified code
+  Row = int(input("Please enter row: "))
+  while Row not in range(10):
+    print("Invalid value entered")
+    Row = int(input("Please enter row: "))
+
   print()             # Print yet another blank line for some reason
   return Row, Column  # Return
             
-def MakePlayerMove(Board, Ships): # Ships is not accessed
+def MakePlayerMove(Board, Ships):
   """
   Function to make a player's move. Takes in the board as an arg
   and also takes in ships. Both are of unknown types. Messy.
@@ -33,7 +39,15 @@ def MakePlayerMove(Board, Ships): # Ships is not accessed
     Board[Row][Column] = "m"  # Mark as a miss
   else:
     print("Hit at (" + str(Column) + "," + str(Row) + ").")
+    CheckSunk(Board, Row, Column, Ships)
     Board[Row][Column] = "h"  # Assumes that any other character is a hit. That could go wrong.
+
+def CheckSunk(Board, Row, Column, Ships):
+  for Ship in Ships:
+    if Board[Row][Column] == Ship[0][0]:
+      Ship[1] -= 1
+    if Ship[1] == 0:
+      print(f"{Ship[0]} is sunk!")
         
 def SetUpBoard():
   """
@@ -213,13 +227,39 @@ def PlayGame(Board, Ships):
   Not much to comment about with inlines.
   """
   GameWon = False
+  HasFiredTorpedo = False
   while not GameWon:
     PrintBoard(Board)
-    MakePlayerMove(Board, Ships)
+    
+    if not HasFiredTorpedo:
+      FireTorpedo = input("Fire a torpedo? (Y/N)")
+      if FireTorpedo == "Y":
+        MakePlayerTorpedoMove(Board, Ships)
+        HasFiredTorpedo = True
+      else: MakePlayerMove(Board, Ships)
+    else:
+      MakePlayerMove(Board, Ships)
+    
     GameWon = CheckWin(Board)
     if GameWon:
       print("All ships sunk!")
       print()
+
+def MakePlayerTorpedoMove(Board, Ships):
+  Row, Column = GetRowColumn()
+  OnBoard = True
+  while OnBoard:
+    if Board[Row][Column] in "m-":
+      Board[Row][Column] = "m"
+      Row -= 1
+    else:
+      OnBoard = False
+      Board[Row][Column] = "h"
+      print(f"Hit At ({Row},{Column}).")
+      CheckSunk(Board, Row, Column, Ships)
+
+    if Row < 0:
+      OnBoard = False
 
 if __name__ == "__main__":
   """
