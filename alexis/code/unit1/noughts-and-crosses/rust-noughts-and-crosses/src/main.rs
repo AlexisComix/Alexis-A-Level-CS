@@ -14,10 +14,10 @@ fn main() {
 
     // Main loop
     loop {
-        let mut is_game_won: bool = false;
+        //let mut is_game_won: bool = false;
         
         // Get the index for the input
-        let mut input_index: i32 = get_input_index();
+        let input_index: i32 = get_input_index();
         if input_index == -1 {return;}
 
         // Place piece at the index
@@ -29,7 +29,7 @@ fn main() {
         // Print current board stat
         print_board(board);
 
-        if is_game_won {break;}
+        //if is_game_won {break;}
     }
 }
 
@@ -65,13 +65,12 @@ fn get_input_index() -> i32 {
     */
     let mut number: i32 = 0;
 
-    let mut valid: bool = false;
+    let valid: bool = false;
     while !valid {
         match number {
             // 1 to 9 inclusive
             1..=9 => {          
                 // Return the number if it is valid
-                valid = true;
                 return number;
             }
             _ => {
@@ -102,7 +101,7 @@ fn place_piece<'a>(mut board: [[&'a str; 3]; 3], index: &i32, player: &'a str) -
     
     // Gets the col as i32
     let x1: i32 = (index % 3) - 1;     // Funky and cringe maths
-    let mut x2: i32;
+    let x2: i32;
     if x1 < 0 {x2 = 2;} else {x2 = x1;}     // If it is -1, the index should be 2
     
     // Convert x and y to usize
