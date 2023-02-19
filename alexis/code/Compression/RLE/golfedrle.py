@@ -1,4 +1,4 @@
-from itertools import groupby as b;f=lambda s:"".join([f"{i}{j}"for i,j in[(c,len(list(g)))for c,g in b(s)]]);
+from itertools import groupby as b;f=lambda s:"".join([f"{i}{j}"for i,j in[(c,len(list(g)))for c,g in b(s)]])
 
 # TESTS
 def main():
