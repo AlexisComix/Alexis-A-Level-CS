@@ -15,7 +15,7 @@ class EncryptDecrypt:
         self.__encr_decr_key: int
 
     @property
-    def encr_decr_key(self) -> int:
+    def encr_decr_key(self) -> int: # type:ignore
         try:
             return self.__encr_decr_key
         except:
