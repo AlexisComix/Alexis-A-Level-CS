@@ -1,15 +1,10 @@
 from itertools import groupby
 
 def string_rle(string: str) -> list:
-    return [( character, len(list(group)) ) 
-            for character, group in groupby(string)]
+    return [( character, len(list(group)) ) for character, group in groupby(string)]
 
 def fancy_string_rle(string: str) -> str:
-    out = ""
-    encoded = string_rle(string)
-    for item, count in encoded:
-        out += f"{count}{item}"
-    return out
+    return "".join([f"{count}{item}" for item, count in string_rle(string)])
 
 def main():
     some_str = "11111110000000000101010000000"
